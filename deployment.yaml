@@ -1,27 +1,27 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: flask-app:11
+  name: flask-app:12
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: flask-app:11
+      app: flask-app:12
   template:
     metadata:
       labels:
-        app: flask-app:11
+        app: flask-app:12
     spec:
       containers:
-      - name: flask-app:11
-        image: asa96/flask-app:
+      - name: flask-app:12
+        image: asa96/flask-app:12
         ports:
         - containerPort: 5000
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: flask-app:11
+  name: flask-app:12
 spec:
   type: NodePort
   ports:
@@ -29,4 +29,4 @@ spec:
     targetPort: 5000
     nodePort: 32000
   selector:
-    app: flask-app:11
+    app: flask-app:12
